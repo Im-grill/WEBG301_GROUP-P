@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('booking', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->string('role')->default('user');
-            $table->rememberToken();
+
+            //Liên kết ID của sân bóng và ID của User để có thể truy xuất dữ liệu booking của người dùng
+            $table->foreignID('pitch_id')->constrained('pitch');
+            $table->foreignID('user_id')->constrained('user');
+            $table->dateTime('Booking');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('booking');
     }
 };
