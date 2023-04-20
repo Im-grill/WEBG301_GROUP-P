@@ -12,12 +12,13 @@ class Pitch extends Model
     protected $primaryKey = 'id';
     protected $fillable = [
         'Pitch',
+        'Slot',
         'Status',
     ];
 
     //1 sân bóng chỉ có thể sở hữu bởi 1 User
-    public function user()
+    public function customer()
     {
-        return $this->hasOne(User::class, 'user_id', 'id');
+        return $this->hasOne(Customer::class, 'customer_id', 'id');
     }
 }

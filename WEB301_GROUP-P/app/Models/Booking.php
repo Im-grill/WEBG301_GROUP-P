@@ -9,11 +9,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Booking extends Model
 {
     use HasFactory;
-    protected $table = 'sales';
+    protected $table = 'booking';
     protected $primaryKey = 'id';
     protected $fillable = [
         'pitch_id',
-        'user_id',
+        'customer_id',
         'Booking',
     ];
 
