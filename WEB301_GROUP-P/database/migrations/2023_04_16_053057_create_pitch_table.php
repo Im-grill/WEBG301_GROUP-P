@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('pitch', function (Blueprint $table) {
             $table->id();
             $table->string('Pitch');
-            $table->integer('Slot');
             $table->boolean('Status');
             $table->timestamps();
         });

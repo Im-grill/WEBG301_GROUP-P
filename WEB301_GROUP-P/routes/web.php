@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
-use App\Http\Middleware\checkLogin;
-use App\Http\Controllers\Auth\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +17,4 @@ use App\Http\Controllers\Auth\AuthController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::middleware([checkLogin::class])->group(function () {
-    Route::resource('customer', CustomerController::class);
-});
-
-
-Route::get('login', [AuthController::class, 'index'])->name('login');
-Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post'); 
+Route::resource('customer', CustomerController::class);
