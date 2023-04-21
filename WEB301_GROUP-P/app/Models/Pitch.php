@@ -12,6 +12,7 @@ class Pitch extends Model
     protected $primaryKey = 'id';
     protected $fillable = [
         'Pitch',
+        'Slot',
         'Status',
     ];
 

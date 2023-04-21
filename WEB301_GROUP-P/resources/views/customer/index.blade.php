@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Customer')
+@section('title', 'Customers')
 @section('content')
     <table class="table table-striped">
         <thead>
