@@ -65,7 +65,7 @@
     border-radius: 4px;
   }
   
-  input[type="text"],
+  input[type="password"],
   input[type="email"] {
     width: 100%;
     padding: 0 0 0 10px;
@@ -81,7 +81,7 @@
     display: inline-block;
     background: none;
   }
-  input[type="text"]:focus,
+  input[type="password"]:focus,
   input[type="email"]:focus {
     border-color: #3ca9e2;
   }
@@ -90,18 +90,18 @@
     color: #cc1e2b;
     border-color: #cc1e2b;
   }
-  input[type="text"]:valid ~ .validation,
+  input[type="password"]:valid ~ .validation,
   input[type="email"]:valid ~ .validation {
     display: block;
     border-color: #0C0;
   }
-  input[type="text"]:valid ~ .validation span,
+  input[type="password"]:valid ~ .validation span,
   input[type="email"]:valid ~ .validation span {
     background: #0C0;
     position: absolute;
     border-radius: 6px;
   }
-  input[type="text"]:valid ~ .validation span:first-child,
+  input[type="password"]:valid ~ .validation span:first-child,
   input[type="email"]:valid ~ .validation span:first-child {
     top: 30px;
     left: 14px;
@@ -110,7 +110,7 @@
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
   }
-  input[type="text"]:valid ~ .validation span:last-child,
+  input[type="password"]:valid ~ .validation span:last-child,
   input[type="email"]:valid ~ .validation span:last-child {
     top: 35px;
     left: 8px;
@@ -172,7 +172,7 @@
     @csrf
     <div class="form-group row">
         <div class="col-md-6">
-            <input type="text" id="email_address" class="form-control" name="email" placeholder="Email" required autofocus>
+            <input type="email" id="email_address" class="form-control" name="email" placeholder="Email" required autofocus>
             @if ($errors->has('email'))
                 <span class="text-danger">{{ $errors->first('email') }}</span>
             @endif
@@ -193,7 +193,7 @@
     </div>
 </form>
   <div id="create-account-wrap">
-    <p>Not a member? <a href="#">Create Account</a><p>
+    <p>Not a member? <a href="./registration">Create Account</a><p>
   </div><!--create-account-wrap-->
 </div><!--login-form-wrap-->
 <!-- partial -->
