@@ -16,31 +16,6 @@
     font-weight: 300;
     text-align: center;
   }
-  
-  p {
-    position: relative;
-  }
-  
-  a,
-  a:link,
-  a:visited,
-  a:active {
-    color: #3ca9e2;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-  }
-  a:focus, a:hover,
-  a:link:focus,
-  a:link:hover,
-  a:visited:focus,
-  a:visited:hover,
-  a:active:focus,
-  a:active:hover {
-    color: #329dd5;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-  }
-  
   #login-form-wrap {
     background-color: #fff;
     width: 35%;
@@ -50,11 +25,7 @@
     border-radius: 4px;
     box-shadow: 0px 30px 50px 0px rgba(0, 0, 0, 0.2);
   }
-  
-  #login-form {
-    padding: 0 60px;
-  }
-  
+
   input {
     display: block;
     box-sizing: border-box;
@@ -85,7 +56,7 @@
   input[type="email"]:focus {
     border-color: #3ca9e2;
   }
-  input[type="text"]:focus:invalid,
+  input[type="password"]:focus:invalid,
   input[type="email"]:focus:invalid {
     color: #cc1e2b;
     border-color: #cc1e2b;
