@@ -16,7 +16,7 @@ return new class extends Migration
 
             //Liên kết ID của sân bóng và ID của User để có thể truy xuất dữ liệu booking của người dùng
             $table->foreignID('pitch_id')->constrained('pitch');
-            $table->foreignID('user_id')->constrained('users');
+            $table->foreignID('customer_id')->constrained('customer');
             $table->dateTime('Booking');
             $table->timestamps();
         });
