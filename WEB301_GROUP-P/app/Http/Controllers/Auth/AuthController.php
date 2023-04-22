@@ -2,10 +2,8 @@
   
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\CarsController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\PitchController;
-use App\Models\Pitch;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;

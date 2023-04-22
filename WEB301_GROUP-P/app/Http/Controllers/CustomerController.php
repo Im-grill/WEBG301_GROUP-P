@@ -23,7 +23,7 @@ class CustomerController extends Controller
     public function create()
     {
         //
-        return view('customers.create');
+        return view('customer.create');
     }
 
     /**
@@ -45,7 +45,7 @@ class CustomerController extends Controller
     {
         //
         $customer = Customer::find($id);
-        return view('customers.show', ['customer' => $customer]);
+        return view('customer.show', ['customer' => $customer]);
     }
 
     /**
@@ -55,7 +55,7 @@ class CustomerController extends Controller
     {
         //
         $customer = Customer::find($id);
-        return view('customers.edit', ['customer' => $customer]);
+        return view('customer.edit', ['customer' => $customer]);
     }
 
     /**
@@ -69,7 +69,7 @@ class CustomerController extends Controller
         $customer->Sex = $request->input('Sex');
         $customer->phoneNumber = $request->input('phoneNumber');
         $customer->save();
-        return redirect()->route('customers.index');
+        return redirect()->route('customer.index');
 
     }
 
@@ -81,7 +81,7 @@ class CustomerController extends Controller
         //
         $customer = Customer::find($id);
         $customer->delete();
-        return redirect()->route('customers.index');
+        return redirect()->route('customer.index');
         
     }
 }

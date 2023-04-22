@@ -34,6 +34,7 @@ class PitchController extends Controller
         //
         $pitch = new Pitch();
         $pitch ->Pitch = $request->input('Pitch');
+        $pitch ->Slot = $request->input('Slot');
         $pitch ->Status = $request->input('Status');
         $pitch->save();
         return redirect()->route('pitch.index');
