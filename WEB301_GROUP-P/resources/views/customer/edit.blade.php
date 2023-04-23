@@ -1,6 +1,19 @@
 @extends('layouts.app')
 @section('title', 'Edit Customer')
 @section('content')
+<style>
+    body {
+        background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+  th{
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 48%);
+  }
+  h1{
+    text-align: center;
+  }
+    </style>
     <form action="{{ route('customer.update', $customer->id) }}" method="POST">
         @csrf
         @method('PUT')

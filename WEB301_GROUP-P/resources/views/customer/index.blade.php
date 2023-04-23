@@ -32,7 +32,6 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
                     <td>{{ $customers->Sex }}</td>
                     <td>{{ $customers->phoneNumber }}</td>
                     <td>
-                        <a href="{{ route('customer.show', $customers->id) }}" class="btn btn-info">Details</a>
                         <a href="{{ route('customer.edit', $customers->id) }}" class="btn btn-primary">Edit</a>
                         <a class = "btn btn-sm">
                         <form method="POST" action="{{ route('customer.destroy', $customers->id) }}">
