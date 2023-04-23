@@ -27,6 +27,7 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
         </thead>
         <tbody>
             @foreach ($customer as $customers)
+            <a href="{{ route('customer.create', $customers->id) }}" class="btn btn-outline-success" style="margin-left: 90%">Add customer</a>
                 <tr>
                     <td>{{ $customers->Name }}</td>
                     <td>{{ $customers->Sex }}</td>

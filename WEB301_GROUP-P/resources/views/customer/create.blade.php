@@ -3,6 +3,7 @@
 @section('content')
     <form action="{{ route('customer.store') }}" method="POST">
         @csrf
+        @method('POST')
         <div>
             <label for="Name">Name</label>
             <input type="text" name="Name" id="Name">
