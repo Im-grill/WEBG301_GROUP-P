@@ -14,6 +14,7 @@ class Pitch extends Model
         'Pitch',
         'Slot',
         'Status',
+        'Image',
     ];
 
     //1 sân bóng chỉ có thể sở hữu bởi 1 User

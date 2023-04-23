@@ -1,21 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Customers')
 @section('content')
-<style>
-  <style>
-    body {
-        background: rgb(238,174,202);
-background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-}
-  th{
-    background: rgb(238,174,202);
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 48%);
-  }
-  h1{
-    text-align: center;
-  }
-    </style>
-    <h1>Customers</h1>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -27,20 +12,18 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
         </thead>
         <tbody>
             @foreach ($customer as $customers)
-            <a href="{{ route('customer.create', $customers->id) }}" class="btn btn-outline-success" style="margin-left: 90%">Add customer</a>
                 <tr>
                     <td>{{ $customers->Name }}</td>
                     <td>{{ $customers->Sex }}</td>
                     <td>{{ $customers->phoneNumber }}</td>
                     <td>
+                        <a href="{{ route('customer.show', $customers->id) }}" class="btn btn-info">Details</a>
                         <a href="{{ route('customer.edit', $customers->id) }}" class="btn btn-primary">Edit</a>
-                        <a class = "btn btn-sm">
                         <form method="POST" action="{{ route('customer.destroy', $customers->id) }}">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
                         </form>
-                      </a>
                     </td>
                 </tr>
             @endforeach

@@ -36,6 +36,7 @@ class PitchController extends Controller
         $pitch ->Pitch = $request->input('Pitch');
         $pitch ->Slot = $request->input('Slot');
         $pitch ->Status = $request->input('Status');
+        $pitch ->Image = $request->input('Image');
         $pitch->save();
         return redirect()->route('pitch.index');
 
@@ -69,7 +70,9 @@ class PitchController extends Controller
         //
         $pitch = Pitch::find($id);
         $pitch ->Pitch = $request->input('Pitch');
+        $pitch ->Slot = $request->input('Slot');
         $pitch ->Status = $request->input('Status');
+        $pitch ->Image = $request->input('Image');
         $pitch->save();
         return redirect()->route('pitch.index');
     }

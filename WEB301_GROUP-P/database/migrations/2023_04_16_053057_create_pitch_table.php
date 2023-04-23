@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('Pitch');
             $table->integer('Slot');
-            $table->boolean('Status');
+            $table->string('Status');
+            $table->text('Image');
             $table->timestamps();
         });
     }

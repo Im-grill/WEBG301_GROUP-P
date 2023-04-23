@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
-    <title>Dashboard Template · Bootstrap v5.0</title>
+    <title>Dashboard Template </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -64,7 +64,38 @@
         <h1 class="h2">Dashboard</h1>
       </div>
 
-      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+      <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        </div>
+        
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://i.ytimg.com/vi/lonEGob6iAc/maxresdefault.jpg"  class="d-block" width="100%" height="600">
+          </div>
+          <div class="carousel-item">
+            <img src="https://i.ytimg.com/vi/Z7jw1qqj2M8/maxresdefault.jpg"  class="d-block" width="100%" height="600">
+          </div>
+          <div class="carousel-item">
+            <img src="https://i.ytimg.com/vi/5FzqiDfRYa0/maxresdefault.jpg"  class="d-block" width="100%" height="600">
+          </div>
+        </div>
+        
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+      
+      <canvas class="my-4 w-100" id="myChart" width="1" height="0"></canvas> 
 
       <h2>Booking status</h2>
       <div class="table-responsive">
@@ -74,10 +105,10 @@
               <th scope="col">#</th>
               <th scope="col">Customer</th>
               <th scope="col">Pitch</th>
-              <th scope="col">Time</th>
+              <th scope="col">Status</th>
             </tr>
           </thead>
-          <tbody>
+          {{-- <tbody>
             <tr>
               <td>1,001</td>
               <td>random</td>
@@ -173,8 +204,8 @@
               <td>random</td>
               <td>tabular</td>
               <td>information</td>
-            </tr>
-          </tbody>
+            </tr> --}}
+          {{-- </tbody> --}}
         </table>
       </div>
     </main>
