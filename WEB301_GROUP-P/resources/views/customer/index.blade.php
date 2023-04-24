@@ -1,9 +1,15 @@
 @extends('layouts.app')
 @section('title', 'Customers')
 @section('content')
+<style>
+    h1{
+        text-align: center;
+    }
+    </style>
     <table class="table table-striped">
         <thead>
             <tr>
+                <h1> Customer List </h1>
                 <th> ID </th>
                 <th>  Name  </th>
                 <th>  Sex  </th>
