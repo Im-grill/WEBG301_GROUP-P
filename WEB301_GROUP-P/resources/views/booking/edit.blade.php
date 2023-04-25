@@ -2,24 +2,32 @@
 
 @section('content')
     <h1>Edit Booking</h1>
-    <form action="{{ route('bookings.update', $booking) }}" method="POST">
+    <form action="{{ route('booking.update', $booking) }}" method="POST">
         @csrf
         @method('PUT')
         <div>
             <label for="customer_id">Customer</label>
             <select name="customer_id" id="customer_id">
-                @foreach ($customers as $customer)
-                    <option value="{{ $customer->id }}" {{ $booking->customer_id == $customer->id ? 'selected' : '' }}>{{ $customer->name }}</option>
+                @foreach ($customer as $customer)
+                    <option value="{{ $customer->id }}" {{ $booking->customer_id == $customer->id ? 'selected' : '' }}>{{ $customer->Name }}</option>
                 @endforeach
             </select>
         </div>
         <div>
             <label for="pitch_id">Pitch</label>
             <select name="pitch_id" id="pitch_id">
-                @foreach ($pitches as $pitch)
-                    <option value="{{ $pitch->id }}" {{ $booking->pitch_id == $pitch->id ? 'selected' : '' }}>{{ $pitch->name }}</option>
+                @foreach ($pitch as $pitch)
+                    <option value="{{ $pitch->id }}" {{ $booking->pitch_id == $pitch->id ? 'selected' : '' }}>{{ $pitch->Pitch }}</option>
                 @endforeach
             </select>
+        </div>
+
+        <div>
+
+                    <label> Booking date
+                    <input type="datetime" name ="Booking" id="Booking" value="{{$booking->Booking}}" >
+
+
         </div>
         <button type="submit">Update Booking</button>
     </form>
