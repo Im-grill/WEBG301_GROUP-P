@@ -21,7 +21,7 @@ class checkLogin
         {
             $user = Auth::user();
             
-            if ($user->role == 'admin' )
+            if ($user->role == 'admin' || $user->role == 'user' )
             {
                 return $next($request);
             }

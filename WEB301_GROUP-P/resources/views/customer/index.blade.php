@@ -6,6 +6,8 @@
         text-align: center;
     }
     </style>
+
+<a href="{{ route('customer.create') }}" class="btn btn-primary">Add</a>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -21,12 +23,13 @@
             @foreach ($customer as $customers)
                 <tr>
                     <td>{{ $customers->id }}</td>
-                    <td>{{ $customers->Name }}</td>
+                    <td>{{ $customers->Name }}</td>   
                     <td>{{ $customers->Sex }}</td>
                     <td>{{ $customers->phoneNumber }}</td>
                     <td>
                         <a href="{{ route('customer.edit', $customers->id) }}" class="btn btn-primary">Edit</a>
                         <a class ="btn btn-sm">
+                        
                         <form method="POST" action="{{ route('customer.destroy', $customers->id) }}">
                             @csrf
                             @method('DELETE')
