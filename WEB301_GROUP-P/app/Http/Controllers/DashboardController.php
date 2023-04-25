@@ -22,7 +22,7 @@ class DashboardController extends Controller
      */
     public function create()
     {
-
+        
     }
 
     /**
@@ -38,7 +38,7 @@ class DashboardController extends Controller
      */
     public function show(string $id)
     {
-
+        //
     }
 
     /**
