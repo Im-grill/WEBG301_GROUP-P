@@ -8,14 +8,14 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
     <title>Dashboard Template </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
 
     
 
     <!-- Bootstrap core CSS -->
 <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
 <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -24,7 +24,6 @@
 <link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
 <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
 <meta name="theme-color" content="#7952b3">
-
 
     <style>
       .bd-placeholder-img {
@@ -43,60 +42,100 @@
     </style>
 
     
-    <!-- Custom styles for this template -->
-  </head>
-  <body>
-    
-<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#" style="margin-left: 50%">FPT Football</a>
+     <!-- Custom styles for this template -->
+     <link href="dashboard.css" rel="stylesheet">
+    </head>
+    <body>
+      
+  <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="navbar-nav">
-    <div class="nav-item text-nowrap">
+    <div class="navbar-nav">
+      <div class="nav-item text-nowrap">
       <a class="nav-link px-3" href="/logout">Sign out</a>
     </div>
   </div>
 </header>
 
 <div class="container-fluid">
-  <div class="row">
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
-        <h2 class="h2">Welcome {{ Auth::user()->name }}!</h2>
+  <div class="d-flex flex-nowrap">
+    <nav id="sidebarMenu" class="d-flex flex-column flex-shrink-1 p-0 text-bg-dark" style="width: 300px;">
+      <div class="position-sticky pt-3">
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="{{route('dashboard.index')}}" class="nav-link active">
+              <svg class="bi pe-none me-2" width="16" height="16"></svg>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="{{route('booking.index')}}" class="nav-link text-white">
+              <svg class="bi pe-none me-2" width="16" height="16"></svg>
+              Booking
+            </a>
+          </li>
+          <li>
+            <a href="{{route('pitch.index')}}" class="nav-link text-white">
+              <svg class="bi pe-none me-2" width="16" height="16"></svg>
+              Pitch
+            </a>
+          </li>
+          <li>
+            <a href="{{route('customer.index')}}" class="nav-link text-white">
+              <svg class="bi pe-none me-2" width="16" height="16"></svg>
+              Customers
+            </a>
+          </li>
+        </ul>
       </div>
+    </nav>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-10">
+    <div class="container-fluid">
+      <div class="row">
 
-      <div id="demo" class="carousel slide" data-bs-ride="carousel">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard</h1>
+            <h2 class="h2">Welcome {{ Auth::user()->name }}!</h2>
+          </div>
 
-        <!-- Indicators/dots -->
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-          <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-          <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-        </div>
-        
-        <!-- The slideshow/carousel -->
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://i.ytimg.com/vi/lonEGob6iAc/maxresdefault.jpg"  class="d-block" width="100%" height="600">
+          <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+            
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://i.ytimg.com/vi/lonEGob6iAc/maxresdefault.jpg"  class="d-block" width="100%" height="600">
+              </div>
+              <div class="carousel-item">
+                <img src="https://i.ytimg.com/vi/Z7jw1qqj2M8/maxresdefault.jpg"  class="d-block" width="100%" height="600">
+              </div>
+              <div class="carousel-item">
+                <img src="https://i.ytimg.com/vi/5FzqiDfRYa0/maxresdefault.jpg"  class="d-block" width="100%" height="600">
+              </div>
+            </div>
+            
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
           </div>
-          <div class="carousel-item">
-            <img src="https://i.ytimg.com/vi/Z7jw1qqj2M8/maxresdefault.jpg"  class="d-block" width="100%" height="600">
-          </div>
-          <div class="carousel-item">
-            <img src="https://i.ytimg.com/vi/5FzqiDfRYa0/maxresdefault.jpg"  class="d-block" width="100%" height="600">
-          </div>
-        </div>
-        
-        <!-- Left and right controls/icons -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </button>
-      </div>
-      
-      <canvas class="my-4 w-100" id="myChart" width="1" height="0"></canvas> 
+          
+          <canvas class="my-4 w-100" id="myChart" width="1" height="0"></canvas> 
+
+
+
 
       <h2>Booking status</h2>
       <div class="table-responsive">

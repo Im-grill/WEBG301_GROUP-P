@@ -28,7 +28,8 @@ class BookingController extends Controller
     {
         //
         $pitch = Pitch::all();
-        return view('booking.create',['pitch'=>$pitch]);
+        $customer = Customer::all();
+        return view('booking.create',['pitch'=>$pitch, 'customer'=>$customer]);
     }
 
     /**

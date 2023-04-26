@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<a href="{{ route('booking.create') }}" class="btn btn-primary">Add Booking</a>
     <h1>Bookings</h1>
     <table class="table">
         <thead>

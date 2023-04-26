@@ -2,12 +2,12 @@
 
 @section('content')
     <h1>Create Booking</h1>
-    <form action="{{ route('bookings.store') }}" method="POST">
+    <form action="{{ route('booking.store') }}" method="POST">
         @csrf
         <div>
             <label for="customer_id">Customer</label>
             <select name="customer_id" id="customer_id">
-                @foreach ($customers as $customer)
+                @foreach ($customer as $customer)
                     <option value="{{ $customer->id }}">{{ $customer->name }}</option>
                 @endforeach
             </select>
@@ -15,7 +15,7 @@
         <div>
             <label for="pitch_id">Pitch</label>
             <select name="pitch_id" id="pitch_id">
-                @foreach ($pitches as $pitch)
+                @foreach ($pitch as $pitch)
                     <option value="{{ $pitch->id }}">{{ $pitch->name }}</option>
                 @endforeach
             </select>
