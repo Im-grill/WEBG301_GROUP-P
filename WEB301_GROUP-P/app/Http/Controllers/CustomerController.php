@@ -36,6 +36,8 @@ class CustomerController extends Controller
         $customer->Name = $request->input('Name');
         $customer->Sex = $request->input('Sex');
         $customer->phoneNumber = $request->input('phoneNumber');
+        $customer->save();
+        return redirect() -> route('customer.index');
     }
 
     /**

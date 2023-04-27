@@ -29,7 +29,7 @@ class BookingController extends Controller
         //
         $pitch = Pitch::all();
         $customer = Customer::all();
-        return view('booking.create',['pitch'=>$pitch, 'customer'=>$customer]);
+        return view('booking.create', ['customer'=>$customer, 'pitch'=>$pitch]);
     }
 
     /**
@@ -41,7 +41,7 @@ class BookingController extends Controller
         $booking = new Booking();
         $booking->pitch_id = $request->input('pitch_id');
         $booking->customer_id = $request->input('customer_id');
-        $booking->booking = $request->input('Booking');
+        $booking->Booking = $request->input('Booking');
         $booking->save();
         return redirect()->route('booking.index');
     }

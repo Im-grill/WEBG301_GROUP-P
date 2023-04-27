@@ -30,11 +30,11 @@
                         <a href="{{ route('customer.edit', $customers->id) }}" class="btn btn-primary">Edit</a>
                         <a class ="btn btn-sm">
                         
-                        <form method="POST" action="{{ route('customer.destroy', $customers->id) }}">
+                       <form method="POST" action="{{ route('customer.destroy', $customers->id) }}">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger" onclick="return confirm('Do you want to delete this column?')">Delete</button>
-                        </form>
+                        </form> 
                     </a>
                     </td>
                 </tr>
